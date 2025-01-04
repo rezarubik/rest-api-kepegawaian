@@ -248,12 +248,6 @@ const deleteOneEmployee = async (req, res) => {
     if (!employee) {
       return res.status(404).json({ message: "Employee not found" });
     }
-    // console.log(
-    //   "employee",
-    //   employee.profile,
-    //   employee.families,
-    //   employee.educations
-    // );
     if (
       employee.profile !== null ||
       (employee.families.length = 0) ||
