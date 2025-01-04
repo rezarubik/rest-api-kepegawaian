@@ -1,9 +1,17 @@
-require("dotenv").config();
 const express = require("express");
-const port = process.env.PORT || 4000;
-const app = express();
+const { sequelize } = require("./models");
+require("dotenv").config();
 
-// todo: Running server
-app.listen(port, () => {
-  console.log(`Server running in port ${port}`);
+const employeeRoutes = require("./routes/employeeRoutes");
+
+const app = express();
+app.use(express.json());
+
+app.use("/api/employees", employeeRoutes);
+
+const PORT = process.env.PORT || 4000;
+
+sequelize.sync().then(() => {
+  console.log("Database connected!");
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 });
