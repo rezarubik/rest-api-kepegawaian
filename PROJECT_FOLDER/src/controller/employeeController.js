@@ -204,7 +204,7 @@ const getEmployees = async (req, res) => {
       data: employees,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message + " test" });
+    res.status(500).json({ message: error.message });
   }
 };
 
