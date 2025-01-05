@@ -1,6 +1,6 @@
 const { EmployeeProfile, Employee } = require("../models");
 
-// Create Employee Profile
+// start: Create Employee Profile
 const createEmployeeProfile = async (req, res) => {
   const { employeeProfileData } = req.body;
   const t = await Employee.sequelize.transaction();
@@ -42,8 +42,9 @@ const createEmployeeProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Create Employee Profile
 
-// Get All Employee Profiles
+// start: Get All Employee Profiles
 const getAllEmployeeProfiles = async (req, res) => {
   try {
     const employeeProfiles = await EmployeeProfile.findAll();
@@ -56,8 +57,9 @@ const getAllEmployeeProfiles = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Get All Employee Profiles
 
-// Get Employee Profile by ID
+// start: Get Employee Profile by ID
 const getEmployeeProfileById = async (req, res) => {
   try {
     const employeeProfile = await EmployeeProfile.findByPk(req.params.id);
@@ -69,8 +71,9 @@ const getEmployeeProfileById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Get Employee Profile by ID
 
-// Update Employee Profile
+// start: Update Employee Profile
 const updateEmployeeProfile = async (req, res) => {
   try {
     const employeeProfile = await EmployeeProfile.findByPk(req.params.id);
@@ -86,8 +89,9 @@ const updateEmployeeProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Update Employee Profile
 
-// Delete Employee Profile
+// start: Delete Employee Profile
 const deleteEmployeeProfile = async (req, res) => {
   try {
     const employeeProfile = await EmployeeProfile.findByPk(req.params.id);
@@ -100,6 +104,7 @@ const deleteEmployeeProfile = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Delete Employee Profile
 
 module.exports = {
   createEmployeeProfile,

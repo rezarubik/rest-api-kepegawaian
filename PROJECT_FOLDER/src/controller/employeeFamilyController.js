@@ -1,6 +1,6 @@
 const { EmployeeFamily } = require("../models");
 
-// Create Employee Family
+// start: Create Employee Family
 const createEmployeeFamily = async (req, res) => {
   try {
     const { employeeFamilyData } = req.body;
@@ -13,8 +13,9 @@ const createEmployeeFamily = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Create Employee Family
 
-// Get All Employee Families
+// start: Get All Employee Families
 const getAllEmployeeFamilies = async (req, res) => {
   try {
     const employeeFamilies = await EmployeeFamily.findAll();
@@ -27,8 +28,9 @@ const getAllEmployeeFamilies = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Get All Employee Families
 
-// Get Employee Family by ID
+// start: Get Employee Family by ID
 const getEmployeeFamilyById = async (req, res) => {
   try {
     const employeeFamily = await EmployeeFamily.findByPk(req.params.id);
@@ -40,8 +42,9 @@ const getEmployeeFamilyById = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Get Employee Family by ID
 
-// Update Employee Family
+// start: Update Employee Family
 const updateEmployeeFamily = async (req, res) => {
   try {
     const employeeFamily = await EmployeeFamily.findByPk(req.params.id);
@@ -57,8 +60,9 @@ const updateEmployeeFamily = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Update Employee Family
 
-// Delete Employee Family
+// start: Delete Employee Family
 const deleteEmployeeFamily = async (req, res) => {
   try {
     const employeeFamily = await EmployeeFamily.findByPk(req.params.id);
@@ -71,6 +75,7 @@ const deleteEmployeeFamily = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+// end: Delete Employee Family
 
 module.exports = {
   createEmployeeFamily,

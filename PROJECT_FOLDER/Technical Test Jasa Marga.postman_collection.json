@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "b04484d3-c304-4b96-ab62-a98d04cca239",
+		"name": "Technical Test Jasa Marga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7973421"
+	},
+	"item": [
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "With Relation",
+					"item": [
+						{
+							"name": "Get All with it's relation",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "localhost:4001/api/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Employee with relation",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employeeData\": {\n        \"nik\": \"123456\",\n        \"name\": \"John Doe for delete\",\n        \"is_active\": true,\n        \"start_date\": \"2023-01-01\",\n        \"end_date\": \"2025-01-01\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"created_at\": \"2023-01-01\",\n        \"updated_at\": \"2023-01-01\"\n    },\n    \"profileData\": {\n        \"place_of_birth\": \"Jakarta\",\n        \"date_of_birth\": \"1990-01-01\",\n        \"gender\": \"Laki-Laki\",\n        \"is_married\": false,\n        \"prof_pict\": \"profile.jpg\"\n    },\n    \"familiesData\": [\n        {\n            \"name\": \"Jane Doe for delete\",\n            \"relation_status\": \"Istri\",\n            \"is_life\": true\n        }\n    ],\n    \"educationsData\": [\n        {\n            \"name\": \"Universitas Indonesia for delete\",\n            \"level\": \"Strata 1\",\n            \"description\": \"Computer Science\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:4001/api/employees"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Employee with relation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"employeeData\": {\n        \"nik\": \"123456\",\n        \"name\": \"John Doe Update\",\n        \"is_active\": true,\n        \"start_date\": \"2023-01-01\",\n        \"end_date\": \"2025-01-01\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"created_at\": \"2023-01-01\",\n        \"updated_at\": \"2023-01-01\"\n    },\n    \"profileData\": {\n        \"place_of_birth\": \"Jakarta\",\n        \"date_of_birth\": \"1990-01-01\",\n        \"gender\": \"Laki-Laki\",\n        \"is_married\": false,\n        \"prof_pict\": \"profile.jpg\"\n    },\n    \"familiesData\": [\n        {\n            \"name\": \"Jane Doe\",\n            \"relation_status\": \"Istri\",\n            \"is_life\": true\n        }\n    ],\n    \"educationsData\": [\n        {\n            \"name\": \"Universitas Indonesia\",\n            \"level\": \"Strata 1\",\n            \"description\": \"Computer Science\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "localhost:4001/api/employees/11"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete with relation",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "localhost:4001/api/employees/12"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employees/all"
+					},
+					"response": []
+				},
+				{
+					"name": "Create One Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeData\": {\n        \"nik\": \"1234561\",\n        \"name\": \"Deli\",\n        \"is_active\": true,\n        \"start_date\": \"2024-01-01\",\n        \"end_date\": \"2024-02-01\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employees/create-one"
+					},
+					"response": []
+				},
+				{
+					"name": "Update One Employee",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeData\": {\n        \"nik\": \"123456\",\n        \"name\": \"John Doe From Deli\",\n        \"is_active\": true,\n        \"start_date\": \"2023-01-01\",\n        \"end_date\": \"2025-01-01\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\",\n        \"created_at\": \"2023-01-01\",\n        \"updated_at\": \"2023-01-01\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employees/23"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employees/11"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete One",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:4001/api/employees/one/11"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Education",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/education"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/education/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"educationData\": {\n        \"employee_id\": 20,\n        \"name\": \"Politeknik Negeri Jakarta for Delete\",\n        \"level\": \"Strata 1\",\n        \"description\": \"Bachelor of Computer Science\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/education"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"educationData\": {\n        \"employee_id\": 1,\n        \"name\": \"Politeknik Negeri Jakarta (PNJ)\",\n        \"level\": \"Strata 1\",\n        \"description\": \"Bachelor of Computer Science\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/education/7"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:4001/api/education/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee Familiy",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employee-families"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employee-families/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeFamilyData\": {\n        \"employee_id\": 1,\n        \"name\": \"Jane Doe\",\n        \"identifier\": \"KTP123456\",\n        \"job\": \"Teacher\",\n        \"place_of_birth\": \"Jakarta\",\n        \"date_of_birth\": \"1985-07-15\",\n        \"religion\": \"Katolik\",\n        \"is_life\": true,\n        \"is_divorced\": false,\n        \"relation_status\": \"Istri\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employee-families"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeFamilyData\": {\n        \"name\": \"Jane Smith\",\n        \"job\": \"Professor\",\n        \"is_life\": false,\n        \"is_divorced\": true,\n        \"updated_by\": \"admin_update\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employee-families/8"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:4001/api/employee-families/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee Profile",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employee-profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Get One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/employee-profile/27"
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeProfileData\": {\n        \"employee_id\": 1,\n        \"place_of_birth\": \"Bandung\",\n        \"date_of_birth\": \"1990-05-20\",\n        \"gender\": \"Laki-Laki\",\n        \"is_married\": true,\n        \"prof_pict\": \"profile1.jpg\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employee-profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"employeeProfileData\": {\n        \"employee_id\": 23,\n        \"place_of_birth\": \"Bandung Barat\",\n        \"date_of_birth\": \"1990-05-20\",\n        \"gender\": \"Laki-Laki\",\n        \"is_married\": true,\n        \"prof_pict\": \"profile1.jpg\",\n        \"created_by\": \"admin\",\n        \"updated_by\": \"admin\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:4001/api/employee-profile/20"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "localhost:4001/api/employee-profile/27"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "Report Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:4001/api/reports/employee-report"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

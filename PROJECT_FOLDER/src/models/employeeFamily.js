@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
       created_at: {
         type: DataTypes.DATE,
         allowNull: false,
-        defaultValue: sequelize.literal("NOW()"), // Isi otomatis dengan waktu sekarang
+        defaultValue: sequelize.literal("NOW()"),
       },
       updated_at: {
         type: DataTypes.DATE,

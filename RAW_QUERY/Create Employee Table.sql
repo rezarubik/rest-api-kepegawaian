@@ -1,5 +1,5 @@
 CREATE TABLE employee (
-  "id" int4 NOT NULL,
+  id SERIAL PRIMARY KEY,
   "nik" varchar(255),
   "name" varchar(255),
   "is_active" bool,
@@ -8,6 +8,5 @@ CREATE TABLE employee (
   "created_by" varchar(255),
   "updated_by" varchar(255),
   "created_at" date NOT NULL,
-  "updated_at" date NOT NULL,
-  PRIMARY KEY ("id")
+  "updated_at" date NOT NULL
 );

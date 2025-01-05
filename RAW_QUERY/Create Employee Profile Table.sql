@@ -1,3 +1,4 @@
+DROP TYPE IF EXISTS gender_enum;
 CREATE TYPE gender_enum AS ENUM ('Laki-Laki', 'Perempuan');
 
 CREATE TABLE employee_profile (
